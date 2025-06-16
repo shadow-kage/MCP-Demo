@@ -26,7 +26,7 @@ async function sendMessage() {
 
     // Show user message
     const userMsg = document.createElement("p");
-    userMsg.innerHTML = `<strong>You:</strong> ${message}`;
+    userMsg.textContent = `You: ${message}`;
     chatBox.appendChild(userMsg);
     chatBox.scrollTop = chatBox.scrollHeight;
     userInput.value = "";
@@ -34,7 +34,7 @@ async function sendMessage() {
     // Show "Assistant is typing..."
     const typingMsg = document.createElement("p");
     typingMsg.id = "typing-msg";
-    typingMsg.innerHTML = "<em>Assistant is typing...</em>";
+    typingMsg.textContent = "Assistant is typing...";
     chatBox.appendChild(typingMsg);
     chatBox.scrollTop = chatBox.scrollHeight;
 
@@ -65,7 +65,7 @@ async function sendMessage() {
         spinner.classList.add("hidden");
 
         const errorMsg = document.createElement("p");
-        errorMsg.innerHTML = "<strong>Assistant:</strong> Error occurred.";
+        errorMsg.textContent = "Assistant: Error occurred.";
         chatBox.appendChild(errorMsg);
     }
 
