@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MCP Web Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MCP Chat</h1>
+            <div class="controls">
+                <button id="toggle-dark">🌙 Toggle Dark Mode</button>
+                <button id="toggle-history">📜 Toggle History</button>
+            </div>
+        </header>
+
+        <div id="chat-history" class="chat-history hidden">
+            <p>No saved chats yet.</p>
+        </div>
+
+        <div id="chat-box" class="chat-box">
+            <p><strong>Assistant:</strong> Hey, Navaid. How can I help you today?</p>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
+            <button id="send-btn">Send</button>
+        </div>
+
+        <div id="spinner" class="spinner hidden"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
